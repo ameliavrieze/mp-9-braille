@@ -1,5 +1,10 @@
 package src;
 
+/**
+ * One node in a BitTree. It either holds a value or links to the left and right nodes below it.
+ * @author Amelia Vrieze
+ */
+
 public class BitTreeNode {
 
   String value;

@@ -3,6 +3,11 @@ package src;
 import java.io.FileInputStream;
 import java.io.PrintWriter;
 
+/**
+ * A utility class to translate between character sets and dump translation tables.
+ * @author Amelia Vrieze
+ */
+
 public class BrailleASCIITables {
   static BitTree braille = new BitTree(8);
   static BitTree ascii = new BitTree(6);

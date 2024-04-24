@@ -2,6 +2,11 @@ package src;
 
 import java.io.PrintWriter;
 
+/**
+ * A main utility class to translate between the various character sets.
+ * @author Amelia Vrieze
+ */
+
 public class BrailleASCII {
   public static void main(String[] args) {
 

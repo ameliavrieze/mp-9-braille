@@ -4,6 +4,12 @@ import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+/**
+ * A tree that is 'level' levels deep, the interior nodes represent 0s and 1s, while the end nodes
+ * have a value.
+ * @author Amelia Vrieze
+ */
+
 public class BitTree {
   int level;
   BitTreeNode root;
