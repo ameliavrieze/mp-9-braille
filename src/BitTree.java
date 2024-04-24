@@ -58,7 +58,21 @@ public class BitTree {
   }
 
   public void dump(PrintWriter pen) {
+    dump(pen, this.root, "");
+
     //stub
+  }
+
+  public void dump(PrintWriter pen, BitTreeNode node, String bits) {
+    if (node.left == null && node.right == null) {
+       pen.println(bits += "," + node.value);
+    }
+    if (node.left != null) {
+      dump(pen, node.left, bits + "0");
+    }
+    if (node.right != null) {
+      dump(pen, node.right, bits + "1");
+    } 
   }
 
   public void load(InputStream source) throws Exception{

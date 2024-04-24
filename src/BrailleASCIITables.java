@@ -1,6 +1,7 @@
 package src;
 
 import java.io.FileInputStream;
+import java.io.PrintWriter;
 
 public class BrailleASCIITables {
   static BitTree braille = new BitTree(8);
@@ -33,11 +34,27 @@ public class BrailleASCIITables {
     String output = "";
     try {
       unicode.load(new FileInputStream("BrailleToUnicode.txt"));
-      output = "\\u" + unicode.get(bits);
+      output += Character.toChars(Integer.parseInt(unicode.get(bits), 16));
     } catch (Exception e) {
       System.err.print(e);
     }
     return output;
+  }
+
+  public static void dumpAll(PrintWriter pen) {
+    try {
+      braille.load(new FileInputStream("ASCIIToBraille.txt"));
+      ascii.load(new FileInputStream("BrailleToASCII.txt"));
+      unicode.load(new FileInputStream("BrailleToUnicode.txt"));
+    } catch (Exception e) {
+      System.err.print(e);
+    }
+    pen.println("ASCII to Braille:");
+    braille.dump(pen);
+    pen.println("Braille to ASCII:");
+    ascii.dump(pen);
+    pen.println("Braille to Unicode:");
+    unicode.dump(pen);
   }
   
 }

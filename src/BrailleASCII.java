@@ -43,5 +43,7 @@ public class BrailleASCII {
       System.err.println("Invalid target character set.");
     }
 
+    BrailleASCIITables.dumpAll(pen);
+
   } 
 }
