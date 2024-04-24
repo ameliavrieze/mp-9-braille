@@ -39,7 +39,8 @@ public class BrailleASCIITables {
     String output = "";
     try {
       unicode.load(new FileInputStream("BrailleToUnicode.txt"));
-      output += Character.toChars(Integer.parseInt(unicode.get(bits), 16));
+      int i = Integer.parseInt(unicode.get(bits), 16);
+      output += Character.toChars(i);
     } catch (Exception e) {
       System.err.print(e);
     }
